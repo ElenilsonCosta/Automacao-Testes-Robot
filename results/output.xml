@@ -1,99 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231108 19:17:10.305" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231114 11:01:27.212" rpa="false" schemaversion="4">
 <suite id="s1" name="AUTOMACAO" source="C:\Users\eleni\Desktop\AUTOMACAO">
-<suite id="s1-s1" name="Konia Testes" source="C:\Users\eleni\Desktop\AUTOMACAO\konia_testes.robot">
-<test id="s1-s1-t1" name="Caso de teste 04 - Acesso ao menu Contato e Preencher os dados" line="29">
-<kw name="Abrir o navegador" library="konia_resources" type="SETUP">
+<suite id="s1-s1" name="Exemplo2" source="C:\Users\eleni\Desktop\AUTOMACAO\exemplo2.robot">
+<test id="s1-s1-t1" name="Preencher Formulário e Verificar Mensagem de Sucesso" line="11">
+<kw name="Abrir o navegador">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231108 19:17:10.533" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20231108 19:17:10.533" endtime="20231108 19:17:12.442"/>
+<msg timestamp="20231114 11:01:27.481" level="INFO">Opening browser 'chrome' to base url 'https://www.example.com'.</msg>
+<status status="PASS" starttime="20231114 11:01:27.480" endtime="20231114 11:02:14.613"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231108 19:17:12.442" endtime="20231108 19:17:12.573"/>
+<status status="PASS" starttime="20231114 11:01:27.480" endtime="20231114 11:02:14.613"/>
 </kw>
-<status status="PASS" starttime="20231108 19:17:10.532" endtime="20231108 19:17:12.575"/>
-</kw>
-<kw name="Dado que o usuario esteja na pagina home page da konia.com.br" library="konia_resources">
+<kw name="Acessar a página">
 <kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
+<arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20231108 19:17:12.578" level="INFO">Opening url 'https://konia.com.br/'</msg>
-<status status="PASS" starttime="20231108 19:17:12.577" endtime="20231108 19:17:23.188"/>
+<msg timestamp="20231114 11:02:14.614" level="INFO">Opening url 'https://www.example.com'</msg>
+<status status="PASS" starttime="20231114 11:02:14.614" endtime="20231114 11:02:14.636"/>
 </kw>
-<status status="PASS" starttime="20231108 19:17:12.575" endtime="20231108 19:17:23.188"/>
+<status status="PASS" starttime="20231114 11:02:14.613" endtime="20231114 11:02:14.636"/>
 </kw>
-<kw name="Quando ele clicar no menu &quot;Contato&quot;" library="konia_resources">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=${BOTÃO_CONTATO}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231108 19:17:23.192" level="INFO">Clicking element '//*[@id="menu-item-220"]/a'.</msg>
-<status status="PASS" starttime="20231108 19:17:23.190" endtime="20231108 19:17:25.018"/>
-</kw>
-<status status="PASS" starttime="20231108 19:17:23.188" endtime="20231108 19:17:25.018"/>
-</kw>
-<kw name="E preencher todos os dados solicitados" library="konia_resources">
+<kw name="Preencher campos do formulário">
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=${CAMPO_NOME}</arg>
-<arg>text="ELENILSON COSTA BARBOSA"</arg>
+<arg>id=name</arg>
+<arg>${NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231108 19:17:25.022" level="INFO">Typing text '"ELENILSON COSTA BARBOSA"' into text field '//*[@id="wpforms-520-field_1"]'.</msg>
-<status status="PASS" starttime="20231108 19:17:25.021" endtime="20231108 19:17:25.414"/>
+<msg timestamp="20231114 11:02:14.639" level="INFO">Typing text 'John Doe' into text field 'id=name'.</msg>
+<msg timestamp="20231114 11:02:14.876" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20231114 11:02:14.877" level="FAIL">Element with locator 'id=name' not found.</msg>
+<status status="FAIL" starttime="20231114 11:02:14.637" endtime="20231114 11:02:14.885"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=${CAMPO_EMAIL}</arg>
-<arg>text="elenilsoncosta2@gmail.com"</arg>
+<arg>id=email</arg>
+<arg>${EMAIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231108 19:17:25.415" level="INFO">Typing text '"elenilsoncosta2@gmail.com"' into text field '//*[@id="wpforms-520-field_2"]'.</msg>
-<status status="PASS" starttime="20231108 19:17:25.415" endtime="20231108 19:17:25.567"/>
+<status status="NOT RUN" starttime="20231114 11:02:14.885" endtime="20231114 11:02:14.886"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=${CAMPO_TELEFONE}</arg>
-<arg>text="92992011839"</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231108 19:17:25.568" level="INFO">Typing text '"92992011839"' into text field '//*[@id="wpforms-520-field_3"]'.</msg>
-<status status="PASS" starttime="20231108 19:17:25.567" endtime="20231108 19:17:25.676"/>
+<status status="FAIL" starttime="20231114 11:02:14.637" endtime="20231114 11:02:14.886"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=${CLICAR_TERMOS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231108 19:17:25.677" level="INFO">Clicking element '//*[@id="privacidade"]'.</msg>
-<status status="PASS" starttime="20231108 19:17:25.676" endtime="20231108 19:17:25.731"/>
+<kw name="Clicar em Enviar">
+<status status="NOT RUN" starttime="20231114 11:02:14.887" endtime="20231114 11:02:14.887"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=${BOTÃO_ENVIAR}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231108 19:17:25.732" level="INFO">Clicking element '//*[@id="wpforms-submit-520"]'.</msg>
-<status status="PASS" starttime="20231108 19:17:25.731" endtime="20231108 19:17:25.825"/>
+<kw name="Verificar mensagem de sucesso">
+<status status="NOT RUN" starttime="20231114 11:02:14.887" endtime="20231114 11:02:14.888"/>
 </kw>
-<status status="PASS" starttime="20231108 19:17:25.020" endtime="20231108 19:17:25.826"/>
+<kw name="Fechar o navegador">
+<status status="NOT RUN" starttime="20231114 11:02:14.888" endtime="20231114 11:02:14.888"/>
 </kw>
-<kw name="E clicar no botão &quot;Enviar&quot;">
-<msg timestamp="20231108 19:17:25.839" level="FAIL">No keyword with name 'E clicar no botão "Enviar"' found.</msg>
-<status status="FAIL" starttime="20231108 19:17:25.832" endtime="20231108 19:17:25.841"/>
-</kw>
-<kw name="Então uma mensagem deverar ser apresentada">
-<status status="NOT RUN" starttime="20231108 19:17:25.851" endtime="20231108 19:17:25.856"/>
-</kw>
-<kw name="Fechar o navegador" library="konia_resources" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20231108 19:17:25.967" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20231108 19:17:25.861" endtime="20231108 19:17:25.967"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20231108 19:17:25.968" endtime="20231108 19:17:28.156"/>
-</kw>
-<status status="PASS" starttime="20231108 19:17:25.860" endtime="20231108 19:17:28.156"/>
-</kw>
-<status status="FAIL" starttime="20231108 19:17:10.531" endtime="20231108 19:17:28.157">No keyword with name 'E clicar no botão "Enviar"' found.</status>
+<status status="FAIL" starttime="20231114 11:01:27.479" endtime="20231114 11:02:14.888">Element with locator 'id=name' not found.</status>
 </test>
-<status status="FAIL" starttime="20231108 19:17:10.358" endtime="20231108 19:17:28.161"/>
+<status status="FAIL" starttime="20231114 11:01:27.264" endtime="20231114 11:02:14.892"/>
 </suite>
-<status status="FAIL" starttime="20231108 19:17:10.309" endtime="20231108 19:17:28.166"/>
+<status status="FAIL" starttime="20231114 11:01:27.217" endtime="20231114 11:02:14.894"/>
 </suite>
 <statistics>
 <total>
@@ -103,7 +63,7 @@
 </tag>
 <suite>
 <stat pass="0" fail="1" skip="0" id="s1" name="AUTOMACAO">AUTOMACAO</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Konia Testes">AUTOMACAO.Konia Testes</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Exemplo2">AUTOMACAO.Exemplo2</stat>
 </suite>
 </statistics>
 <errors>
